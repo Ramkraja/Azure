@@ -1,0 +1,7 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+runcmd:
+  - echo "<html><body><h1>Image Server</h1><img src='https://example.com/sample.jpg' alt='Sample Image'></body></html>" > /var/www/html/index.html
+  - systemctl restart nginx

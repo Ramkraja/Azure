@@ -1,0 +1,7 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+runcmd:
+  - echo "<html><body><h1>Video Server</h1><video width='320' height='240' controls><source src='https://example.com/sample.mp4' type='video/mp4'></video></body></html>" > /var/www/html/index.html
+  - systemctl restart nginx
